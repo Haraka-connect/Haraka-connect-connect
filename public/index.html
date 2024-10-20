@@ -154,7 +154,38 @@
                 video.pause(); // Pause the video when it's out of view
             }
         });
-    </script>
+
+  
+
+    
+  document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent default form submission
+
+    // Collect form data
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const password = document.getElementById('password').value;
+    const service = document.getElementById('service').value;
+
+    // Push data to Firebase Realtime Database
+    firebase.database().ref('users').push({
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      phone: phone,
+      password: password,
+      service: service
+    }).then(function() {
+      alert('User signed up successfully!');
+    }).catch(function(error) {
+      alert('Error: ' + error.message);
+    });
+  });
+</script>
+        
+
     <h3>Our Mission</h3>
     <ul class="mission-list">
         <li>Improve service accessibility by providing a reliable platform for customers to access services efficiently.</li>
@@ -689,7 +720,7 @@
       <h1 id="signup">Create an Account </h1>
 <section class="container" id="signup-form">
     <h2>Create Your Account</h2>
-    <form action="/signup" method="POST" onsubmit="return validateSignupForm()">
+    <form id="signup-form" onsubmit="return validateSignupForm()">
         <label for="firstname">First Name <span class="required">*</span></label>
         <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
 
@@ -738,7 +769,7 @@
    <!-- Login Form -->
 <section class="container login-form" id="login-form">
     <h2>Log in to Your Account</h2>
-    <form action="/login" method="POST" onsubmit="return validateLoginForm()">
+    <form id="signup-form" onsubmit="return validateLoginForm()">
         <label for="login-email">Email <span class="required">*</span></label>
         <input type="email" id="login-email" name="login-email" placeholder="Enter your email" required>
 
