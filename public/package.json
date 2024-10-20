@@ -1,24 +1,28 @@
 {
   "name": "haraka-connect",
   "version": "1.0.0",
-  "description": "A project for HarakaConnect, a service for connecting users.",
-  "main": "index.js",  // Change this to your entry point file
+  "description": "A project for HarakaConnect, a service for connecting users with a signup feature.",
+  "main": "app.js",  // You can change this if you plan to create a specific entry file later
   "scripts": {
-    "start": "node index.js",  // Change this based on how you start your application
-    "build": "echo 'Build step here'",  // Replace with your actual build command
-    "test": "echo 'No test specified' && exit 0"  // Replace with your actual test command
+    "start": "node app.js",  // Placeholder for starting your application
+    "build": "echo 'Build step here'",  // Modify this based on your future build process
+    "test": "echo 'No test specified' && exit 0"  // Placeholder for testing command
   },
   "keywords": [
     "haraka",
     "connect",
+    "signup",
     "service"
   ],
   "author": "Bonome Katabana",  // Replace with your name
   "license": "ISC",
   "dependencies": {
-    // Add your project dependencies here
+    "express": "^4.18.2",  // Express for creating a server
+    "body-parser": "^1.19.0",  // Middleware to handle form submissions
+    "bcrypt": "^5.1.0",  // Library for hashing passwords
+    "firebase-admin": "^11.2.0"  // Firebase Admin SDK for backend operations
   },
   "devDependencies": {
-    // Add your development dependencies here
+    "nodemon": "^2.0.22"  // Tool for monitoring changes during development
   }
 }
