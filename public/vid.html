@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haraka Connect - About Us</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 28px;
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        video {
+            display: block;
+            margin: 30px auto;
+            max-width: 90%;
+            border-radius: 10px;
+            border: 3px solid #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        video:hover {
+            transform: scale(1.05);
+        }
+
+        /* Smooth Scroll for Anchors */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll to About Us Button */
+        .scroll-to-about {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-to-about:hover {
+            background-color: #003d80;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll to About Us Button -->
+    <button class="scroll-to-about" onclick="scrollToAbout()">Learn More About Us</button>
+
+    <!-- About Us Section -->
+    <div class="section about" id="about-us">
+        <h3>About Us</h3>
+        <p>Haraka Connect Ltd. is dedicated to providing convenient and affordable laundry services for all your clothing needs. Our goal is to make sure you have clean clothes without the hassle of doing laundry. From shirts to sneakers, we handle it all with care and professionalism.</p>
+
+        <!-- Video Section -->
+        <video controls>
+            <source src="about-us-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- OR, to embed a video from YouTube -->
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+        <p>With years of experience, our team ensures that your clothes are treated with the utmost care. Whether you’re a light user or need a heavy-duty plan, we offer flexible subscriptions tailored to meet your laundry needs.</p>
+    </div>
+
+    <script>
+        // Smooth scroll to "About Us" section
+        function scrollToAbout() {
+            document.getElementById("about-us").scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Optional: Auto-pause video when the user scrolls past the section
+        window.addEventListener('scroll', function() {
+            var video = document.querySelector('video');
+            var rect = video.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > window.innerHeight) {
+                video.pause(); // Pause the video when it's out of view
+            }
+        });
+    </script>
+
+</body>
+</html>

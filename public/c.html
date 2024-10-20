@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating & Review System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 5px;
+            padding: 5px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .review {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Rate a Professional</h2>
+        <form id="reviewForm">
+            <label for="reviewerName">Your Name:</label>
+            <input type="text" id="reviewerName" required>
+
+            <label for="reviewText">Your Review:</label>
+            <textarea id="reviewText" rows="4" required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+        <h3>Reviews</h3>
+        <div id="reviewsContainer"></div>
+    </div>
+    <script>
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const reviewerName = document.getElementById("reviewerName").value;
+            const reviewText = document.getElementById("reviewText").value;
+
+            const reviewDiv = document.createElement("div");
+            reviewDiv.classList.add("review");
+            reviewDiv.innerHTML = `<strong>${reviewerName}</strong><p>${reviewText}</p>`;
+            document.getElementById("reviewsContainer").appendChild(reviewDiv);
+            alert("Review submitted successfully!");
+            this.reset();
+        });
+    </script>
+</body>
+</html>

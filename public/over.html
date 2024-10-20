@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Haraka Connect Ltd. - Connecting you to skilled professionals for various services.">
+  <title>Haraka Connect Ltd.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Haraka Connect Ltd.</h1>
+      <p>Connecting you to skilled professionals for a wide range of services.</p>
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>Haraka Connect Ltd. is a trusted service provider based in Kikuube District, connecting customers with skilled professionals across a wide range of services. Our mission is to ensure quality service delivery and customer satisfaction.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="service-item">
+      <h3>Home Maintenance</h3>
+      <p>We connect you with professionals for plumbing, electrical work, carpentry, and other home maintenance services.</p>
+    </div>
+    <div class="service-item">
+      <h3>Transport & Logistics</h3>
+      <p>Our team coordinates efficient transport solutions for bulky purchases and personal needs, ensuring timely and secure delivery.</p>
+    </div>
+    <div class="service-item">
+      <h3>Event Management</h3>
+      <p>Let us handle the organization of your events with experienced coordinators and reliable suppliers for equipment, catering, and more.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <h2>Our Projects</h2>
+    <div class="project-card">
+      <h3>Community Empowerment</h3>
+      <p>We work with local communities to provide skills training and employment opportunities, improving livelihoods.</p>
+      <img src="haraka-images/project1.jpg" class="project-image">
+    </div>
+    <div class="project-card">
+      <h3>Reliable Transport Network</h3>
+      <p>Haraka Connect is expanding its transport network to connect more rural areas with essential services and markets.</p>
+      <img src="haraka-images/project2.jpg" class="project-image">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+    <div class="contact-details">
+      <h3>Reach Us</h3>
+      <p>We are here to connect you to the right services. Contact us using the form or the details below:</p>
+      <p><strong>Email:</strong> info@harakaconnect.com</p>
+      <p><strong>Phone:</strong> +256-781-123456</p>
+      <p><strong>Address:</strong> Kikuube District, Uganda</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-media">
+        <a href="https://www.facebook.com/harakaconnect"><img src="haraka-images/facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.twitter.com/harakaconnect"><img src="haraka-images/twitter-icon.png" alt="Twitter"></a>
+      </div>
+      <p>© 2024 Haraka Connect Ltd. All Rights Reserved.</p>
+    </div>
+  </footer>
+<style>
+    /* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+/* Navbar */
+nav {
+  background-color: #007BFF;
+  padding: 15px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+/* Section Styles */
+section {
+  padding: 60px 20px;
+}
+
+.activities-container, .projects-section .project-card, .blog-section .blog-post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.activities-container .activity-item, 
+.project-card, 
+.blog-post {
+  background-color: #fff;
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 30%;
+}
+
+.activities-container .activity-item h3, 
+.project-card h3, 
+.blog-post h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.activities-container .activity-item p, 
+.project-card p, 
+.blog-post p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.project-card img, .blog-post img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Donation Section */
+.donation-section {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.donation-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.donation-section p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.donation-section a {
+  padding: 15px 30px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.donation-section a:hover {
+  background-color: #0056b3;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.contact-section form {
+  display: inline-block;
+  text-align: left;
+  width: 60%;
+}
+
+.contact-section form input, 
+.contact-section form textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.contact-section form button {
+  padding: 15px 30px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-section form button:hover {
+  background-color: #0056b3;
+}
+
+.details h3 {
+  margin-top: 30px;
+}
+
+.details span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Map Section */
+.map-section iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+/* Footer */
+footer.basics {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-section .social img {
+  width: 40px;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.footer-section .footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.footer-section .footer-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-section .footer-links li a {
+  color: #fff;
+}
+
+footer p {
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .activities-container .activity-item, 
+  .project-card, 
+  .blog-post {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .contact-section form {
+    width: 100%;
+  }
+
+  nav ul li {
+    display: block;
+    margin-right: 0;
+  }
+
+  nav ul li a {
+    padding: 10px 0;
+    display: block;
+  }
+}
+</style>
+</body>
+</html>

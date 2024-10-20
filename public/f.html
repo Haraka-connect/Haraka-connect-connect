@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .currency {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Language</h2>
+        <select id="languageSelector">
+            <option value="en">English</option>
+            <option value="sw">Swahili</option>
+            <option value="lg">Luganda</option>
+        </select>
+        <div class="currency">
+            <h3>Pricing in UGX</h3>
+            <p>Service Fee: 50,000 UGX</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("languageSelector").addEventListener("change", function() {
+            alert("Language switched to: " + this.value);
+        });
+    </script>
+</body>
+</html>

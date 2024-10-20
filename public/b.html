@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Bars Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Menu button */
+        .menu-icon {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            text-align:left;
+        }
+
+        .menu-icon div {
+            width: 35px;
+            height: 4px;
+            background-color: black;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        /* The menu items */
+        .nav {
+            display: none;
+            flex-direction: column;
+            align-items: left;
+        }
+
+        .nav a {
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Menu open state */
+        .menu-open .menu-icon {
+            display: none;
+        }
+
+        .menu-open .nav {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu icon (hamburger) -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <!-- Navigation links -->
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href ="#">SignUp</a>
+         </div>
+
+    <script>
+        function toggleMenu() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const nav = document.querySelector('.nav');
+
+            // Toggle 'menu-open' class
+            document.body.classList.toggle('menu-open');
+        }
+    </script>
+
+</body>
+</html>

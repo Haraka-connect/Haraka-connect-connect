@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request and Booking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 2px;
+            padding: 2px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 100%;
+            padding: 2px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book a Service</h2>
+        <form id="bookingForm">
+            <label for="customerName">Your Name:</label>
+            <input type="text" id="customerName" required>
+
+            <label for="serviceType">Service Type:</label>
+            <input type="text" id="serviceType" required>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" required>
+
+            <button type="submit">Book Service</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Service booked successfully!");
+            this.reset();
+        });
+    </script>
+</body>
+</html>

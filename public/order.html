@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Allocation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Allocation System</h1>
+        <form id="orderForm">
+            <div>
+                <label for="client">Client Name:</label>
+                <input type="text" id="client" name="client" required>
+            </div>
+            <div>
+                <label for="product">Product Name:</label>
+                <input type="text" id="product" name="product" required>
+            </div>
+            <div>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+            </div>
+            <div>
+                <label for="urgency">Urgency:</label>
+                <select id="urgency" name="urgency" required>
+                    <option value="normal">Normal</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+            </div>
+            <button type="submit">Add Order</button>
+        </form>
+
+        <h2>Identical Orders</h2>
+        <div id="orderList"></div>
+
+        <h2>Transportation Allocation</h2>
+        <div id="allocation"></div>
+    </div>
+
+    <!-- Modal for identical order alert -->
+    <div id="identicalOrderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+        <style>
+         body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+#orderList, #allocation {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}  
+        </style>
+    </div>
+
+    <script>
+        
+        // List to store all orders
+let orders = [];
+
+// Handle form submission
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Get form values
+    const client = document.getElementById('client').value;
+    const product = document.getElementById('product').value;
+    const quantity = parseInt(document.getElementById('quantity').value);
+    const urgency = document.getElementById('urgency').value;
+
+    // Add order to the list
+    addOrder(client, product, quantity, urgency);
+
+    // Filter and display orders
+    filterOrders();
+
+    // Allocate transportation
+    allocateTransportation();
+});
+
+// Function to add order to the list and detect identical orders
+function addOrder(client, product, quantity, urgency) {
+    // Check if an identical order exists
+    const existingOrder = orders.find(order => order.product === product && order.urgency === urgency);
+
+    if (existingOrder) {
+        // If an identical order exists, check if the same client has already placed an order
+        const existingClientOrder = existingOrder.clients.find(c => c.name === client);
+        if (existingClientOrder) {
+            // If the same client exists, update their quantity
+            existingClientOrder.quantity += quantity;
+        } else {
+            // If it's a new client for this identical order, add them to the clients array
+            existingOrder.clients.push({ name: client, quantity: quantity });
+        }
+
+        // Update the total quantity for the order
+        existingOrder.totalQuantity += quantity;
+        showModal(`Identical order detected for ${product} with urgency ${urgency}. The quantity has been updated.`);
+    } else {
+        // If no identical order, add it to the list with client info
+        orders.push({
+            product: product,
+            urgency: urgency,
+            totalQuantity: quantity,
+            clients: [{ name: client, quantity: quantity }]
+        });
+    }
+}
+
+// Function to display a modal with a custom message
+function showModal(message) {
+    const modal = document.getElementById("identicalOrderModal");
+    const modalMessage = document.getElementById("modalMessage");
+    modalMessage.textContent = message;
+    modal.style.display = "block";
+
+    // Close the modal when the user clicks the close button
+    document.querySelector(".close").onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Close the modal when the user clicks anywhere outside the modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+}
+
+// Function to filter orders and display them with client details
+function filterOrders() {
+    const orderList = document.getElementById('orderList');
+    orderList.innerHTML = ''; // Clear previous orders
+
+    // Loop through the orders to display them along with client details
+    orders.forEach(order => {
+        orderList.innerHTML += `
+            <p>
+                Product: ${order.product} | Total Quantity: ${order.totalQuantity} | Urgency: ${order.urgency}
+                <br>
+                Clients:
+                <ul>
+                    ${order.clients.map(client => `<li>${client.name}: ${client.quantity} units</li>`).join('')}
+                </ul>
+            </p>
+        `;
+    });
+}
+
+// Function to allocate transportation based on total quantity of each order
+function allocateTransportation() {
+    const allocationDiv = document.getElementById('allocation');
+    allocationDiv.innerHTML = ''; // Clear previous allocation
+
+    // Loop through the orders to allocate transportation
+    orders.forEach(order => {
+        if (order.totalQuantity > 10) {
+            allocationDiv.innerHTML += `
+                <p>Allocate a truck for ${order.product} (Total Quantity: ${order.totalQuantity})</p>
+            `;
+        } else {
+            allocationDiv.innerHTML += `
+                <p>Allocate a van for ${order.product} (Total Quantity: ${order.totalQuantity})</p>
+            `;
+        }
+    });
+}
+    </script>
+</body>
+</html>

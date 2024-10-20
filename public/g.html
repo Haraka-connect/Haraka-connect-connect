@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARAKA CONNECT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2 {
+            color: #007BFF;
+        }
+        
+        .mission-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .mission-list li {
+            padding: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cta button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background-color: #0056b3;
+        }
+
+        .more-content {
+            display: none; /* Hide by default */
+            margin-top: 10px;
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>HARAKA CONNECT</h1>
+    </header>
+
+    <section>
+        <h2>About Us</h2>
+        <p>We are a dedicated service provider from Kikuube District, connecting customers with skilled professionals across a wide range of services. We prioritize <strong>quality</strong> and <strong>satisfaction</strong> while enhancing service accessibility within the region.</p>
+        
+        <h2>Our Mission</h2>
+        <ul class="mission-list">
+            <li>Improve service accessibility by providing a reliable platform for customers to access services efficiently.</li>
+            <li>Establish partnerships with skilled professionals to ensure quality service delivery.</li>
+            <li>Monitor service processes to guarantee customer satisfaction and timely delivery.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Services Offered</h2>
+        <h3>Training in High-Quality Bar and Liquid Soap Making</h3>
+        <p>Learn how to make your own soap and stop buying it from the shop!</p>
+        <p>Save money and create an additional source of income.</p>
+        <p>Even if you've been producing soap with minimal profit, we will teach you how to increase your profit margins.</p>
+        
+        <p><em>Jifunze kutengeneza sabuni ya maji au ya muti (bar soap) kwa matumizi ya nyumba au kwa biashara. Hata kama hupati faida, tunakufundisha jinsi ya kufanya biashara yenye faida.</em></p>
+        
+        <div class="cta">
+            <button onclick="toggleMoreContent(this)">Learn More</button>
+            <div class="more-content">
+                <p>In our training, you will learn the following:</p>
+                <ul>
+                    <li>Basic and advanced soap making techniques.</li>
+                    <li>Ingredient sourcing and cost management.</li>
+                    <li>Market strategies for selling your soap.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HARAKA CONNECT. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMoreContent(button) {
+            const moreContent = button.nextElementSibling; // Get the next sibling element
+            // Toggle the display property
+            if (moreContent.style.display === "none" || moreContent.style.display === "") {
+                moreContent.style.display = "block"; // Show the content
+                button.textContent = "Show Less"; // Change button text
+            } else {
+                moreContent.style.display = "none"; // Hide the content
+                button.textContent = "Learn More"; // Change button text back
+            }
+        }
+    </script>
+
+</body>
+</html>

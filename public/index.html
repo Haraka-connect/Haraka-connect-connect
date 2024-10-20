@@ -1,1 +1,1579 @@
 
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARAKA CONNECT </title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="home">
+        <img src="D:\ltd\1.jpg" alt="logo" id="bk">
+        <h1>HARAKA CONNECT </h1>
+
+        <!-- 3-bar toggle button -->
+   <div class="toggle-button" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <!-- Navigation Menu -->
+   <ul id="nav-menu">
+   <li><a href="#home">Home</a></li>
+   <li><a href="store.html">Services</a></li>
+  <li><a href="#signup">Sign Up</a></li>
+   <li><a href="#profiles">Contact</a></li>
+   <li><a href="#faqs">FAQs</a></li>
+ <li><a href="#policy">Privacy Policy</a></li>
+        </ul>
+        <script>
+          function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            // Toggle the display of the menu
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "flex"; // Show the menu
+            } else {
+                menu.style.display = "none"; // Hide the menu
+            }
+        } 
+        </script>
+    </header>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 28px;
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        video {
+            display: block;
+            margin: 30px auto;
+            max-width: 90%;
+            border-radius: 10px;
+            border: 3px solid #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        video:hover {
+            transform: scale(1.05);
+        }
+
+        /* Smooth Scroll for Anchors */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll to About Us Button */
+        .scroll-to-about {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-to-about:hover {
+            background-color: #003d80;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll to About Us Button -->
+    <button class="scroll-to-about" onclick="scrollToAbout()">Learn More About Us</button>
+
+    <!-- About Us Section -->
+    <div class="section about" id="about-us">
+        <h3>About Us</h3>
+        <p>Haraka Connect Ltd. is dedicated to providing convenient and affordable laundry services for all your clothing needs. Our goal is to make sure you have clean clothes without the hassle of doing laundry. From shirts to sneakers, we handle it all with care and professionalism.</p>
+
+        <!-- Video Section -->
+        <video controls>
+            <source src="b.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- OR, to embed a video from YouTube -->
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+        <p>With years of experience, our team ensures that your clothes are treated with the utmost care. Whether you’re a light user or need a heavy-duty plan, we offer flexible subscriptions tailored to meet your laundry needs.</p>
+    </div>
+
+    <script>
+        // Smooth scroll to "About Us" section
+        function scrollToAbout() {
+            document.getElementById("about-us").scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Optional: Auto-pause video when the user scrolls past the section
+        window.addEventListener('scroll', function() {
+            var video = document.querySelector('video');
+            var rect = video.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > window.innerHeight) {
+                video.pause(); // Pause the video when it's out of view
+            }
+        });
+    </script>
+    <h3>Our Mission</h3>
+    <ul class="mission-list">
+        <li>Improve service accessibility by providing a reliable platform for customers to access services efficiently.</li>
+        <li>Establish partnerships with skilled professionals to ensure quality service delivery.</li>
+        <li>Monitor service processes to guarantee customer satisfaction and timely delivery.</li>
+    </ul>
+
+    <h3>Services Offered</h3>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+        .service-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+        .service-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 12px 25px;
+            margin-right: 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-learn {
+            background-color: #28a745;
+        }
+        .btn-learn:hover {
+            background-color: #218838;
+        }
+        .btn-contact {
+            background-color: #007bff;
+        }
+        .btn-contact:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .service-container {
+                grid-template-columns: 1fr;
+            }
+            .action-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .btn {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="service-container">
+<!-- Image Section -->
+ <h2 style="text-transform: uppercase;">making high-quality bar and liquid soap Training</h2>
+<div class="service-image">
+    <img src="boz.jpg" alt="Soap Making Training" class="service-image">
+</div>  
+<!-- Text Section -->
+<div class="service-content">
+   
+    <p>Get trained in making high-quality bar and liquid soap.</p>
+    <ul>
+        <li>★ You will no longer buy soap in the shop</li>
+        <li>★ You'll save and make money aside of your job</li>
+    </ul>
+    <p>Even when you've been producing soap but with little or no profit, we teach you how to make good profit.</p>
+    <p>Jifunze sabuni ya maji au ya muti (bar soap) kwa matumizi ya nyumba au kibiashara. Hata uwe hupati faida, tunakufundisha jinsi ya kufanya biashara na kupata faida.</p>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="btn btn-learn">Learn More</button>
+    </div>
+</div>
+</div>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    h1, h2 {
+        text-align: center;
+    }
+    .section {
+        background-color: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .section img {
+        display: block;
+        margin: 0 auto 20px auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    ul {
+        list-style-type: square;
+        padding-left: 20px;
+    }
+    .plans, .example {
+        background-color: #e0f7fa;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 8px;
+    }
+    .benefits {
+        display: flex;
+        justify-content: space-between;
+    }
+    .benefit {
+        width: 30%;
+        background-color: #fff9c4;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<h1>Clothes Washing </h1>
+<h2>HARAKA collects and washes clothes for you!</h2>
+
+<div class="section">
+    <img src="bo.jpg" alt="Washing Service">
+    <h3>We take care of:</h3>
+    <ul>
+        <li>Shirts</li>
+        <li>Trousers</li>
+        <li>T-shirts</li>
+        <li>Jackets & Jumpers</li>
+        <li>Suits</li>
+        <li>Sneakers</li>
+        <li>Socks</li>
+        <li>Caps</li>
+        <li>Sweaters</li>
+        <li>Skirts</li>
+        <li>...and more!</li>
+    </ul>
+    <p><strong>NB: 1Kg is at 10,000 UGX</strong></p>
+</div>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service:hover {
+            transform: scale(1.02);
+        }
+
+        .service img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .form {
+            margin-top: 15px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .pricing {
+            margin-top: 15px;
+        }
+
+        .subscription-plan {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+    <div class="container">
+
+        <div class="services">
+
+            <!-- Electronics Shopping Service -->
+            <div class="service">
+                <img src="a.jpg" alt="Electronics Shopping">
+                <h2>Electronics Shopping</h2>
+                <p>We connect you to our professionals in Kampala and abroad, who look for the type of phone you like, original and at an affordable price, whether new, used, or refurbished!</p>
+                <div class="form">
+                    <label for="phone-name">Name, Model or Type:</label>
+                    <input type="text" id="phone-name" placeholder="e.g., iPhone 13">
+                    
+                    <label for="phone-condition">Condition:</label>
+                    <select id="phone-condition">
+                        <option value="new">New</option>
+                        <option value="used">Used</option>
+                        <option value="refurbished">Refurbished</option>
+                    </select>
+                    
+                    <label for="phone-color">Color:</label>
+                    <input type="text" id="phone-color" placeholder="e.g., Black">
+                    
+                    <label for="local-price">Local Price:</label>
+                    <input type="number" id="local-price" placeholder="Enter price in UGX">
+                    
+                    <button onclick="submitPhoneForm()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Kampala Shoes Shopping Service -->
+            <div class="service">
+                <img src="c.jpg" alt="Shoes Shopping">
+                <h2>Kampala Shoes Shopping</h2>
+                <p>We connect you to our professionals in Kampala, who look for any type of shoes you like, original and at an affordable price.</p>
+                <div class="form">
+                    <label for="shoes-name">Name of Shoes:</label>
+                    <input type="text" id="shoes-name" placeholder="e.g., Nike Air Max">
+                    
+                    <label for="shoe-size">Number Size:</label>
+                    <input type="number" id="shoe-size" placeholder="Enter your shoe size">
+                    
+                    <label for="shoe-color">Color:</label>
+                    <input type="text" id="shoe-color" placeholder="e.g., Red">
+                    
+                    <label for="shoes-local-price">Local Price:</label>
+                    <input type="number" id="shoes-local-price" placeholder="Enter price in UGX">
+                    
+                    <button onclick="submitShoesForm()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Carpentry/Welding Service -->
+            <div class="service">
+                <img src="d.jpg" alt="Carpentry/Welding">
+                <h2>Carpentry/Welding</h2>
+                <p>We connect you with skilled professionals for various items like tables, beds, doors, windows, and more. Save time and money!</p>
+                <div class="form">
+                    <label for="carpentry-item">Item Needed:</label>
+                    <input type="text" id="carpentry-item" placeholder="e.g., Table">
+                    
+                    <label for="carpentry-quantity">Quantity:</label>
+                    <input type="number" id="carpentry-quantity" placeholder="Enter quantity">
+                    
+                    <label for="carpentry-budget">Budget:</label>
+                    <input type="number" id="carpentry-budget" placeholder="Enter your budget in UGX">
+                    
+                    <button onclick="submitCarpentryForm()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Online Marketplace/Soko Mtandaoni -->
+            <div class="service">
+                <img src="e.jpg" alt="Online Marketplace">
+                <h2>Online Marketplace/Soko Mtandaoni</h2>
+                <p>Rent or sell houses and used items. Provide details like name, type, condition, and price for your listings.</p>
+                <div class="form">
+                    <label for="marketplace-item-name">Item Name:</label>
+                    <input type="text" id="marketplace-item-name" placeholder="e.g., Rental House">
+                    
+                    <label for="marketplace-type">Type or Model:</label>
+                    <input type="text" id="marketplace-type" placeholder="e.g., House with 2 rooms">
+                    
+                    <label for="marketplace-price">Price:</label>
+                    <input type="number" id="marketplace-price" placeholder="Enter price in UGX">
+                    
+                    <button onclick="submitMarketplaceForm()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Shoes Making/Repair -->
+            <div class="service">
+                <img src="f.jpg" alt="Shoes Making/Repair">
+                <h2>Shoes Making/Repair</h2>
+                <p>Connect with skilled professionals for shoe making and repair services. Save time and money!</p>
+                <div class="form">
+                    <label for="shoes-making-name">Name of Shoes:</label>
+                    <input type="text" id="shoes-making-name" placeholder="e.g., Sandals">
+                    
+                    <label for="shoes-making-size">Size:</label>
+                    <input type="number" id="shoes-making-size" placeholder="Enter shoe size">
+                    
+                    <button onclick="submitShoesMakingForm()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Clothes Making -->
+            <div class="service">
+                <img src="g.jpg" alt="Clothes Making">
+                <h2>Clothes Making</h2>
+                <p>We connect you with skilled tailors for various fashions. Save time and money!</p>
+                <div class="form">
+                    <label for="clothes-making-type">Type of Clothes:</label>
+                    <input type="text" id="clothes-making-type" placeholder="e.g., Dress">
+                    
+                    <label for="clothes-making-budget">Budget:</label>
+                    <input type="number" id="clothes-making-budget" placeholder="Enter your budget in UGX">
+                    
+                    <button onclick="submitClothesMakingForm()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Hair Care/Growth -->
+            <div class="service">
+                <img src="h.jpg" alt="Hair Care/Growth">
+                <h2>Hair Care/Growth</h2>
+                <p>Training in hair growth oil making and shampoo making for quality hair care.</p>
+                <div class="form">
+                    <label for="hair-care-training">Training Interest:</label>
+                    <input type="text" id="hair-care-training" placeholder="e.g., Hair Growth Oil Making">
+                    
+                    <button onclick="submitHairCareForm()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Ironing and Folding -->
+            <div class="service">
+                <img src="i.jpg" alt="Ironing and Folding">
+                <h2>Ironing and Folding</h2>
+                <p>HARAKA irons and folds clothes for you! Check our pricing and subscription plans.</p>
+                <div class="pricing">
+                    <div class="subscription-plan">
+                        <strong>Basic Plan:</strong> 5% discount
+                    </div>
+                    <div class="subscription-plan">
+                        <strong>Standard Plan:</strong> 10% discount
+                    </div>
+                    <div class="subscription-plan">
+                        <strong>Premier Plan:</strong> 15% discount
+                    </div>
+                </div>
+                <div class="form">
+                    <label for="ironing-item">Item to Iron:</label>
+                    <input type="text" id="ironing-item" placeholder="e.g., Shirt">
+                    
+                    <button onclick="submitIroningForm()">Submit</button>
+                </div>
+            </div>
+            
+<div class="section">
+    <h3>Subscription Plans:</h3>
+    <div class="plans">
+        <p><strong>★ Basic Plan:</strong> 15% Discount for light users</p>
+        <p><strong>★ Standard Plan:</strong> 25% Discount for moderate users</p>
+        <p><strong>★ Premium Plan:</strong> 35% Discount for heavy users</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Example: How Discounts Work</h3>
+    <div class="example">
+        <p><strong>★ Basic Plan (15% Discount):</strong><br>
+        If your total is 10,000 UGX: <br>
+        Discount: 1,500 UGX <br>
+        You pay: 8,500 UGX</p>
+    </div>
+    <div class="example">
+        <p><strong>★ Standard Plan (25% Discount):</strong><br>
+        If your total is 15,000 UGX: <br>
+        Discount: 3,750 UGX <br>
+        You pay: 11,250 UGX</p>
+    </div>
+    <div class="example">
+        <p><strong>★ Premium Plan (35% Discount):</strong><br>
+        If your total is 20,000 UGX: <br>
+        Discount: 7,000 UGX <br>
+        You pay: 13,000 UGX</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Benefits:</h3>
+    <div class="benefits">
+        <div class="benefit">
+            <p><strong>Save Money:</strong><br> More items mean bigger discounts.</p>
+        </div>
+        <div class="benefit">
+            <p><strong>Flexibility:</strong><br> Choose the plan that fits your needs.</p>
+        </div>
+        <div class="benefit">
+            <p><strong>Value:</strong><br> Great savings compared to paying full price.</p>
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+        function submitPhoneForm() {
+            alert("Phone shopping details submitted!");
+        }
+
+        function submitShoesForm() {
+            alert("Shoes shopping details submitted!");
+        }
+
+        function submitCarpentryForm() {
+            alert("Carpentry order submitted!");
+        }
+
+        function submitMarketplaceForm() {
+            alert("Marketplace listing submitted!");
+        }
+
+        function submitShoesMakingForm() {
+            alert("Shoe making details submitted!");
+        }
+
+        function submitClothesMakingForm() {
+            alert("Clothes making details submitted!");
+        }
+
+        function submitHairCareForm() {
+            alert("Hair care training interest submitted!");
+        }
+
+        function submitIroningForm() {
+            alert("Ironing request submitted!");
+        }
+    </script>
+
+
+</div>
+
+
+
+
+
+
+    
+      <h1 id="signup">Create an Account </h1>
+<section class="container" id="signup-form">
+    <h2>Create Your Account</h2>
+    <form action="/signup" method="POST" onsubmit="return validateSignupForm()">
+        <label for="firstname">First Name <span class="required">*</span></label>
+        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+
+        <label for="lastname">Last Name <span class="required">*</span></label>
+        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="password">Password <span class="required">*</span></label>
+        <input type="password" id="password" name="password" placeholder="Enter a password" required minlength="8">
+
+        <label for="confirm_password">Confirm Password <span class="required">*</span></label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required minlength="8">
+
+        <label for="service">Select Your Preferred Service <span class="required">*</span></label>
+        <select id="service" name="service" required>
+            <option value="">--Select a Service--</option>
+            <option value="Soap Making Training">Soap Making Training</option>
+            <option value="Plumbing">Plumbing Services</option>
+            <option value="Electrical Services">Electrical Services</option>
+            <option value="Carpentry">Carpentry and Woodwork</option>
+            <option value="Gardening">Gardening & Landscaping</option>
+            <option value="Cleaning">Home Cleaning Services</option>
+        </select>
+
+        <label>
+            <input type="checkbox" name="terms" id="terms" required> I agree to the <a href="#">Terms and Conditions</a> <span class="required">*</span>
+        </label>
+
+      
+    <button type="submit" class="submit-btn">Sign Up</button>
+</form>
+
+
+    <div class="toggle-form">
+        Already have an account? <a onclick="showLoginForm()">Log in here</a>
+    </div>
+</section>
+
+<!-- Login Form -->
+
+   <!-- Login Form -->
+<section class="container login-form" id="login-form">
+    <h2>Log in to Your Account</h2>
+    <form action="/login" method="POST" onsubmit="return validateLoginForm()">
+        <label for="login-email">Email <span class="required">*</span></label>
+        <input type="email" id="login-email" name="login-email" placeholder="Enter your email" required>
+
+        <label for="login-password">Password <span class="required">*</span></label>
+        <input type="password" id="login-password" name="login-password" placeholder="Enter your password" required minlength="8">
+
+        <button type="submit" class="submit-btn">Log In</button>
+    </form>
+
+    <div class="toggle-form">
+        Don't have an account? 
+        <a onclick="showSignupForm()">Sign up here</a>
+    </div>
+
+
+</section>
+ <h1 id="myaccount">My Account</h1>
+<div id="account" class="container">
+    <!-- Profile Information Section -->
+    <div class="section">
+        <h2>Profile Information</h2>
+        <p>Username: <strong id="username">John Doe</strong></p>
+        <p>Email: <strong id="email">john.doe@example.com</strong></p>
+        <p>Phone: <strong id="phone">+123456789</strong></p>
+        <p>Shipping Address: <strong id="address">123 Main St, City, Country</strong></p>
+    </div>
+
+    <!-- Account Management Section -->
+    <div class="section">
+        <h2>Account Management</h2>
+        <p>Change password, manage addresses, and view order history.</p>
+    </div>
+
+    <!-- Order History and Wishlist Section -->
+    <div class="section">
+        <h2>Order History & Wishlist</h2>
+        <p>View your past orders, track current orders, and manage your wishlist.</p>
+    </div>
+</div>
+
+<div id="login-message" class="login-message">
+    <p>You are not logged in. Please log in or create an account to access your profile.</p>
+    <a href="f.html" class="login-btn">Login / Create Account</a>
+</div>
+    <br>
+    <br>
+    <h1 id="faqs">FAQs</h1>
+
+    <div class="faq">
+        <h5>1. What services does Haraka Connect offer?</h5>
+        <p>Haraka Connect provides a range of services connecting customers with skilled professionals in various fields, including plumbing, electrical work, cleaning, and more.</p>
+    </div>
+    
+    <div class="faq">
+        <h5>2. How can I request a service?</h5>
+        <p>You can request a service by visiting our <a href="#signup"> "Request Service"</a> page, filling out the form, and providing details about your needs. Our team will get back to you promptly.</p>
+    </div>
+
+    <div class="faq">
+        <h5>3. Are the professionals vetted?</h5>
+        <p>Yes, all professionals are thoroughly vetted and undergo background checks to ensure quality and reliability.</p>
+    </div>
+
+    <div class="faq">
+        <h5>. What is the response time for service requests?</h5>
+        <p>We aim to respond to all service requests within 24 hours, depending on the availability of professionals in your area.</p>
+    </div>
+
+    <div class="faq">
+        <h5>5. How can I pay for services?</h5>
+        <p>Payment options will be provided upon service completion. We accept various methods, including cash and mobile money.</p>
+    </div>
+
+    <div class="faq">
+        <h5>6. Do you offer guarantees on the services provided?</h5>
+        <p>Yes, we offer a satisfaction guarantee on all services. If you're not satisfied, please contact us to resolve any issues.</p>
+    </div>
+
+    <div class="faq">
+        <h5>7. How can I contact customer support?</h5>
+        <p>You can reach our customer support via the "Contact Us" page or by calling our support line.</p>
+    </div>
+<div id="policy">
+   
+    <h1>Privacy Policy</h1>
+
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy outlines how Haraka Connect collects, uses, and protects your personal information when you visit our website and use our services.</p>
+
+    <h2>2. Information We Collect</h2>
+    <p>- Personal Identification Information: Name, email address, phone number, etc.</p>
+    <p>- Non-personal Identification Information: Browser type, IP address, etc.</p>
+
+    <h2>3. How We Use Your Information</h2>
+    <p>We use your information to provide services, improve customer service, send periodic emails, and respond to inquiries.</p>
+
+    <h2>4. Data Protection</h2>
+    <p>We implement appropriate data collection, storage, and processing practices to protect against unauthorized access, alteration, disclosure, or destruction of your personal information.</p>
+
+    <h2>5. Sharing Your Information</h2>
+    <p>We do not sell, trade, or rent your personal identification information to others.</p>
+
+    <h2>6. Your Rights</h2>
+    <p>You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us.</p>
+
+    <h2>7. Changes to This Privacy Policy</h2>
+    <p>We may update this policy periodically. We encourage you to review this page for the latest information on our privacy practices.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us via the <a href="#contact">"Contact Us" </a>page.</p>
+</div>
+
+        
+       
+<div class="container">
+    <h1>Contact Us</h1>
+
+    <div class="profile" id="profiles">
+      <form action="/message" method="POST">
+    
+        <img src="https://via.placeholder.com/80" alt="Boazi Mpezi">
+        <div class="profile-info">
+            <p><strong>Boazi Mpezi</strong></p>
+            <p>📱 +256 760 855472</p>
+            <p>📧 mupebaz.aquila@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="profile">
+        <img src="https://via.placeholder.com/80" alt="Bonome Katabana">
+        <div class="profile-info">
+            <p><strong>Bonome Katabana</strong></p>
+            <p>📱 0773573240</p>
+            <p>📧 bonomekatabana06@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="profile">
+        <img src="https://via.placeholder.com/80" alt="Jaimin Aquilla">
+        <div class="profile-info">
+            <p><strong>Jaimin Aquilla</strong></p>
+            <p>📱 0773531114</p>
+            <p>📧 info@harakaconnect.ug</p>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form action="message.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+           
+    <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</div>
+<footer>
+  <div id="static-footer">
+    <ul>
+      <li><a href="#home">🏠</a></li>
+      <li><a href="#service.html">🛠️ </a></li>
+      <li><a href="store.html">🛒 </a></li>
+      <li><a href="account.html">👤 </a></li>
+    </ul>
+  </div>
+</footer>
+<style>
+    /*Trying to align items to center*/
+    #goat{
+      text-align: center;
+      text-transform: none;
+      text-decoration: none;
+      text-overflow: inherit;
+      text-wrap: wrap;
+        
+    }
+    /* Footer Styles */
+#static-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007BFF;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#static-footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#static-footer ul li {
+  display: inline;
+}
+
+#static-footer ul li a {
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+#static-footer ul li a:hover {
+  background-color: #0056b3;
+  border-radius: 5px;
+}
+
+#static-footer ul li a:active {
+  background-color: #003f7f;
+}
+  #static{
+      display:flex;
+      flex-direction:raw;
+      background-color:white;
+  }  
+  #static ul{
+      list-style-type:none;
+      flex-direction:raw;
+  }
+
+#static ul li{
+    color:black;
+    flex-direction:raw;
+}
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Adjustments for smaller devices */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding:5px;
+            width: 99.5%;
+            border-radius:2%;
+            height:5%;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Toggle button styles */
+        .toggle-button {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+      .bar {
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            transition: 0.3s;
+            }
+
+        /* Navigation menu styles */
+        #nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: none; 
+            flex-direction: column;
+            position: absolute;
+            top: 60px; /* Adjust this based on header height */
+            right: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #nav-menu li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        #nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        #nav-menu a:hover {
+            background-color: #555;
+        }
+        #bk{
+            border-radius:100%;
+            width:100px;
+            height:100px;
+        }
+    
+    
+        h1 {
+            text-align: center;
+        }
+        .faq {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .faq h5{
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .faq p,p {
+            margin: 5px 0;
+        }
+        #policy{
+            margin:15px;
+        }
+        h2{
+            text-align:left;
+            font-size: 1.2em;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        #account {
+            display: none; /* Hidden by default */
+        }
+
+        .login-message {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #007BFF;
+            margin-top: 50px;
+        }
+
+        .login-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+  * {
+            box-sizing: border-box;
+        }
+               .container {
+            max-width: 600px;
+            
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+        }
+        h2 {
+            text-align: center;
+            color: #007BFF;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .required {
+            color: red;
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .toggle-form a {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .toggle-form a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 50%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Hiding login form by default */
+        .login-form {
+            display: none;
+        }
+
+* {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 7px;
+            padding: 2px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .catalog-section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .catalog-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #007BFF;
+        }
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: #555;
+        }
+        .service-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-title {
+            font-size: 1.5em;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+        .service-description {
+            flex-grow: 1;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007BFF;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Layout */
+        @media (min-width: 768px) {
+            .service-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .service-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            margin-top: 20px;
+        }
+        button{
+            text-decoration:none;
+        }     
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007BFF;
+            text-align:left;
+        }
+        .mission-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .mission-list li {
+            padding: 10px 0;
+        }
+        .cta {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .cta button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cta button:hover {
+            background-color: #0056b3;
+        }
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+.profile img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.profile-info {
+    font-size: 1.2rem;
+    flex: 1; /* Make profile info take available space */
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.contact-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and borders are included in element's width */
+}
+
+.contact-form button {
+    width: 100%; /* Ensure button takes full width on small screens */
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .profile {
+        flex-direction: column; /* Stack the image and text vertically on small screens */
+        align-items: flex-start; /* Align the text to the left */
+    }
+
+    .profile img {
+        margin-bottom: 15px;
+        width: 70px;
+        height: 70px;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 1rem; /* Slightly smaller font for smaller screens */
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+    }
+}
+    
+   </style> 
+
+<script>
+    function validateSignupForm() {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm_password').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match. Please try again.');
+            return false;
+        }
+        return true;
+    }
+
+    function validateLoginForm() {
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        if (email === "" || password === "") {
+            alert('Please fill in both email and password.');
+            return false;
+        }
+        return true;
+    }
+
+    function showLoginForm() {
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('login-form').style.display = 'block';
+    }
+
+    function showSignupForm() {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('signup-form').style.display = 'block';
+    }
+     // Simulating user login status (replace with real authentication check)
+    const isLoggedIn = false; // Change to true if user is logged in
+
+    window.onload = function () {
+        if (isLoggedIn) {
+            document.getElementById('account').style.display = 'block'; // Show account section
+            document.getElementById('login-message').style.display = 'none'; // Hide login prompt
+        } else {
+            document.getElementById('account').style.display = 'none'; // Hide account section
+            document.getElementById('login-message').style.display = 'block'; // Show login prompt
+        }
+    };
+    function validateSignupForm() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+}
+function validateLoginForm() {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    // Add your validation logic here (e.g., check format)
+    if (!email || !password) {
+        alert('Please fill in all fields.');
+        return false; // Prevent form submission
+    }
+
+    return true; // Allow form submission
+}
+app.get('/profile', (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).send('You must be logged in to view this page.');
+    }
+
+    // Render the profile page with user data (use a template engine or send HTML)
+    res.send(`
+        <h1>My Account</h1>
+        <div id="account" class="container">
+            <div class="section">
+                <h2>Profile Information</h2>
+                <p>Username: <strong>${req.session.user.name}</strong></p>
+                <p>Email: <strong>${req.session.user.email}</strong></p>
+                <!-- Add more profile info as needed -->
+            </div>
+        </div>
+    `);
+});
+app.post('/signup', (req, res) => {
+  console.log(req.body); // Log the submitted form data
+  res.send('Signup successful!'); // Respond back to the client
+});
+
+    
+</script>
+</body>
+</html>
+
