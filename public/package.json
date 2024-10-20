@@ -1,0 +1,24 @@
+{
+  "name": "haraka-connect",
+  "version": "1.0.0",
+  "description": "A project for HarakaConnect, a service for connecting users.",
+  "main": "index.js",  // Change this to your entry point file
+  "scripts": {
+    "start": "node index.js",  // Change this based on how you start your application
+    "build": "echo 'Build step here'",  // Replace with your actual build command
+    "test": "echo 'No test specified' && exit 0"  // Replace with your actual test command
+  },
+  "keywords": [
+    "haraka",
+    "connect",
+    "service"
+  ],
+  "author": "Bonome Katabana",  // Replace with your name
+  "license": "ISC",
+  "dependencies": {
+    // Add your project dependencies here
+  },
+  "devDependencies": {
+    // Add your development dependencies here
+  }
+}
