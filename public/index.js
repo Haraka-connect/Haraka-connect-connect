@@ -6,7 +6,7 @@ const firebaseConfig = {
   storageBucket: "haraka-connect.appspot.com",
   messagingSenderId: "659205805627",
   appId: "1:659205805627:android:5460d13133e79ccd3eee1e",
-  measurementId: "G-MEASUREMENT_ID" // Add if using Firebase Analytics
+  measurementId: "https://haraka-connect-ug-75c03.web.app/" // Add if using Firebase Analytics
 };
 
 // Initialize Firebase
