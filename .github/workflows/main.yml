@@ -1,0 +1,41 @@
+name: Firebase Deploy
+
+on:
+  push:
+    branches:
+      - main  # Triggers deployment on push to the 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Runs the job on the latest Ubuntu environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Checks out your repository's code
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3  # Sets up the Node.js environment
+        with:
+          node-version: '20'  # Specify the Node.js version to use
+
+      - name: Install dependencies
+        run: npm install  # Installs project dependencies
+
+      - name: Build Project
+        run: npm run build  # Adjust this command as needed for your build process
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools  # Installs the Firebase CLI globally
+
+      - name: Deploy to Firebase
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}  # Uses the Firebase token secret
+        run: firebase deploy --project haraka-connect-ug  # Deploys to Firebase
