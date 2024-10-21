@@ -1,14 +1,21 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCur_L5uw-Je3ZugQN9RHAkmfJq_H_SR8U",
+  apiKey: "AIzaSyAHOXKFxFRS8lfidTf5LeW0q8X16k5jA10",
   authDomain: "haraka-connect.firebaseapp.com",
-  databaseURL: "https://haraka-connect-ug-default-rtdb.firebaseio.com",
   projectId: "haraka-connect",
   storageBucket: "haraka-connect.appspot.com",
   messagingSenderId: "659205805627",
-  appId: "1:659205805627:android:5460d13133e79ccd3eee1e",
-  measurementId: "https://haraka-connect-ug-75c03.web.app/" // Add if using Firebase Analytics
+  appId: "1:659205805627:web:d0c47abdeac646de3eee1e",
+  measurementId: "G-SDKJG83QWD"
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
